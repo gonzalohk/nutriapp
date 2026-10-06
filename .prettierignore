@@ -1,0 +1,6 @@
+node_modules/
+dist/
+coverage/
+pnpm-lock.yaml
+supabase/seed/official_holidays.sql
+src/data/database.types.ts

@@ -1,0 +1,3 @@
+allowBuilds:
+  '@embedded-postgres/linux-arm64': true
+  esbuild: true

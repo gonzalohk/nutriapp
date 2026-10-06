@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Photo compression lab</title>
+    <style>body{font-family:system-ui;margin:1rem}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:.3rem .6rem;text-align:right}img{max-width:320px;display:block;margin:.5rem 0}</style>
+  </head>
+  <body>
+    <h1>Photo compression lab</h1>
+    <p>Pick photos from your phone (food, a receipt). Each one goes through the app's real compression and the result is shown so you can judge legibility. The constants live in <code>src/data/photo-config.ts</code>.</p>
+    <input id="files" type="file" accept="image/*" multiple />
+    <table id="out"><thead><tr><th>file</th><th>original KB</th><th>result KB</th><th>thumb KB</th><th>size</th><th>format</th><th>quality</th><th>ms</th></tr></thead><tbody></tbody></table>
+    <div id="previews"></div>
+    <pre id="json" hidden></pre>
+    <script type="module" src="./photo-lab.ts"></script>
+  </body>
+</html>

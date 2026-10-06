@@ -1,0 +1,26 @@
+# Supabase local development configuration (supabase CLI).
+project_id = "nutrilara"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage"]
+
+[db]
+port = 54322
+major_version = 15
+
+[auth]
+enabled = true
+site_url = "http://localhost:5173"
+# Sign-up stays open, but a new account sees no data until it joins a household with an invite code.
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+# The built-in email sender is heavily rate-limited, so the app never depends on email.
+enable_confirmations = false
+
+[storage]
+enabled = true
+file_size_limit = "2MiB"

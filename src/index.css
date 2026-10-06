@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Status palettes: text on background meets WCAG AA. Status is never conveyed by color alone. */
+  --color-pending-bg: #fef3c7;
+  --color-pending-fg: #78350f;
+  --color-picked-bg: #dcfce7;
+  --color-picked-fg: #14532d;
+  --color-cancelled-bg: #e2e8f0;
+  --color-cancelled-fg: #1e293b;
+  --color-missed-bg: #fee2e2;
+  --color-missed-fg: #7f1d1d;
+  --color-permission-bg: #f3e8ff;
+  --color-permission-fg: #581c87;
+
+  --color-brand: #15803d;
+  --color-brand-dark: #166534;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f8faf8;
+  color: #0f172a;
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+button {
+  touch-action: manipulation;
+}

@@ -1,0 +1,25 @@
+node_modules/
+dist/
+dev-dist/
+coverage/
+test-results/
+playwright-report/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.vscode/
+.idea/
+# Photos must never be committed (RULE-009). Only the tiny test fixtures are allowed.
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.heic
+!tests/fixtures/*
+!public/icons/*
+!public/*.png
+supabase/.branches/
+supabase/.temp/
+.cache/

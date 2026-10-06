@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      # The suite must pass in several timezones to prove date logic is timezone-independent.
+      - run: pnpm test:tz
+      - run: pnpm build
+      - run: pnpm check:bundle
+      - name: No secrets in the repository
+        run: |
+          if git grep -nE 'service_role|SUPABASE_SERVICE' -- . ':!.github' ':!docs' ':!specs' ':!scripts' ':!README.md'; then
+            echo "Service-role key reference found in app code"; exit 1
+          fi
